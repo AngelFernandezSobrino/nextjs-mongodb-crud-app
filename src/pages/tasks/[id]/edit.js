@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import FloatBtn from "@/src/components/floatBtn/floatBtn";
 import styles from "../tasks.module.css";
@@ -12,6 +12,10 @@ export default function EditTask({task}) {
 
   const router = useRouter();
 
+  useEffect(() => {
+    getTask();
+  }, []);
+
   const handleChange = (e) =>
     setNewTask({ ...newTask, [e.target.name]: e.target.value });
 
@@ -21,6 +25,17 @@ export default function EditTask({task}) {
     console.table(newTask);
     router.push("/");
   };
+
+  const getTask = async () => {
+    try {
+      const res = await fetch(`http://localhost:3000/api/tasks/${task._id}`);
+      const data = await res.json();
+      setNewTask({title: data.title, description: data.description});
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
 
   const updateTask = async () => {
     try {
