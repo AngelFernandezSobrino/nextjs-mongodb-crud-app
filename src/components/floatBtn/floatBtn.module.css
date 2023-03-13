@@ -1,0 +1,24 @@
+.floatBtn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floatBtn:hover{
+    box-shadow: 0 0 20px rgba(231, 229, 229, 0.899);
+}
+
+.floatBtn span{
+    color: #333;
+    background: transparent;
+}

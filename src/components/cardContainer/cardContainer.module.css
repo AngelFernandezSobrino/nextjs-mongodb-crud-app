@@ -1,0 +1,54 @@
+.cardContainer{
+    width: 25em;
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    border: 1px solid rgba(135, 21, 21, 0.37);
+    animation: delay 2s;
+
+}
+
+.cardContainer h1{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #fff;
+    background: transparent;
+}
+
+.cardContainer button{
+    width: 10em;
+    height: 4em;
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cardContainer button:hover{
+    background: #0b0a19;
+    transition: all 0.1s ease-in-out;
+    color: #f8f5f5;
+}
+
+@keyframes delay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
